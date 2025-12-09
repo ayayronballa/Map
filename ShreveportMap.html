@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shreveport District Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
+
+    /* Makes popups readable on phones */
+    .leaflet-popup-content {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+	
+	.leaflet-marker-icon {
+	  transition: opacity 0.3s ease;
+	}
+	
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  /*
+    ----------------------------
+    1. CREATE THE MAP
+    ----------------------------
+    Centered on Shreveport
+  */
+
+  var map = L.map('map', {
+    zoomControl: true
+  }).setView(
+    [32.5252, -93.7502], // Shreveport coordinates
+    13 // zoom level (12–14 is good for cities)
+  );
+
+  /*
+    ----------------------------
+    2. BLACK & WHITE BASE MAP
+    ----------------------------
+    CartoDB Positron (NO labels)
+  */
+
+  L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+    {
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      maxZoom: 19
+    }
+  ).addTo(map);
+
+  /*
+    ----------------------------
+    DISTRICTS
+    ----------------------------
+  */
+
+  var dtDistrict = L.polygon([
+    [32.52000549885464, -93.74551954657079],
+    [32.51236959647605, -93.73955621049716],
+    [32.508421021813085, -93.74538702757224],
+    [32.49761743128131, -93.75894809541198],
+	[32.51602001116375, -93.75885974969873],
+	[32.51907432589873, -93.76014076254098],
+	[32.518217638337234, -93.75519340259851]
+  ], {
+    color: '#990000',        // border color
+    fillColor: '#ff0000',    // fill color
+    fillOpacity: 0.35,  
+	minZoom: 13,  // polygon will only show at zoom 13+
+	maxZoom: 18
+  }).addTo(map);
+
+  dtDistrict.bindPopup(
+    "<b>Downtown</b><br>Test.<br>Test."
+  );
+  
+    var mtDistrict = L.polygon([
+    [32.55480430441542, -93.7712748443052],
+	[32.5476096540974, -93.76262479231538],
+	[32.5484305493444, -93.75122505586856],
+	[32.53061060623521, -93.748704511181],
+	[32.51991886922251, -93.74899090274756],
+	[32.51798671657212, -93.75414658681072],
+	[32.512286624240794, -93.7583857048182],
+	[32.50270813872937, -93.74974265858779],
+	[32.51058917014662, -93.73808531470677], //Red River, south of downtown
+	[32.50705497839322, -93.72021393094668],
+	[32.4847023999754, -93.69273504069919],
+	[32.427554028916546, -93.69913509817268],
+	[32.4112631717082, -93.72300161105994],
+	[32.437774103647456, -93.80739692775198],
+	[32.473055702939945, -93.8122140118253],
+	[32.48800962960851, -93.78099930505974],
+	[32.51141078579256, -93.78042125497095]
+  ], {
+    color: '#009900',        // border color
+    fillColor: '#00ff00',    // fill color
+    fillOpacity: 0.35        // transparency
+  }).addTo(map);
+
+  mtDistrict.bindPopup(
+    "<b>Midtown</b><br>Test.<br>Test."
+  );
+
+  /*
+    ----------------------------
+    MAP MARKERS
+    ----------------------------
+    Example: Police station
+  */
+
+// -------------------------
+// Define icons
+// -------------------------
+var policeIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/policebadge.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var hospitalIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/hospital.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var barIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/bar.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var cityhallIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/cityhall.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var firestationIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/firestation.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+// -------------------------
+// Create markers
+// -------------------------
+
+// GOVERNMENT
+var policeHQ = L.marker([32.49954889045339, -93.7566043593193], {icon: policeIcon, opacity: 0})
+.bindPopup("<b>Police HQ</b><br>Status: Active<br>Security Level: Very High");
+
+var downtownPolice = L.marker([32.515380644280675, -93.74941267504738], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Downtown Police Station</b><br>Status: Active<br>Security Level: High");
+
+var cityHall = L.marker([32.51304513876439, -93.75089804095852], { icon: cityhallIcon, opacity: 0 })
+  .bindPopup("<b>City Hall</b><br>Status: Active<br>Security Level: High");
+
+var fireDept = L.marker([32.5004250568676, -93.75797208232918], { icon: firestationIcon, opacity: 0 })
+  .bindPopup("<b>Fire Department</b><br>Status: Active<br>Security Level: Medium");
+  
+var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Jail</b><br>Status: Active<br>Security Level: Very High");
+  
+//BUSINESSES
+  
+ 
+
+// -------------------------
+// Group markers
+// -------------------------
+var importantLocations = L.layerGroup([policeHQ]).addTo(map);
+var mediumLocations = L.layerGroup([downtownPolice, cityHall]).addTo(map);
+var minorLocations = L.layerGroup([fireDept, jail]).addTo(map);
+
+// -------------------------
+// CSS transition for smooth fade
+// -------------------------
+/* Add in your <style> or CSS file */
+var css = document.createElement("style");
+css.innerHTML = `
+  .leaflet-marker-icon {
+    transition: opacity 0.3s ease;
+  }
+`;
+document.head.appendChild(css);
+
+// -------------------------
+// Fade in/out by zoom
+// -------------------------
+map.on('zoomend', function() {
+  var zoom = map.getZoom();
+
+  // Important locations (e.g., HQ) visible at zoom 12+
+  importantLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 12 ? 1 : 0);
+  });
+
+  // Medium locations visible at zoom 13+
+  mediumLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 14 ? 1 : 0);
+  });
+
+  // Minor locations (example, zoom 14+)
+  minorLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 16 ? 1 : 0);
+  });
+});
+
+
+</script>
+
+</body>
+</html>
