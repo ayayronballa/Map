@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shreveport District Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
+
+    /* Makes popups readable on phones */
+    .leaflet-popup-content {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+	
+	.leaflet-marker-icon {
+	  transition: opacity 0.3s ease;
+	}
+	
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  /*
+    ----------------------------
+    1. CREATE THE MAP
+    ----------------------------
+    Centered on Shreveport
+  */
+
+  var map = L.map('map', {
+    zoomControl: true
+  }).setView(
+    [32.5252, -93.7502], // Shreveport coordinates
+    13 // zoom level (12–14 is good for cities)
+  );
+
+  /*
+    ----------------------------
+    2. BLACK & WHITE BASE MAP
+    ----------------------------
+    CartoDB Positron (NO labels)
+  */
+
+  L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+    {
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      maxZoom: 19
+    }
+  ).addTo(map);
+
+  /*
+    ----------------------------
+    DISTRICTS
+    ----------------------------
+  */
+
+  var dtDistrict = L.polygon([
+    [32.51205827965636, -93.73916024404055],  //right bridge
+    [32.509730123552856, -93.74340083827697],  //spaghetti interchange
+    [32.50462659444815, -93.74673588895249],
+    [32.51336202077195, -93.75515081879784],
+	[32.5146066741002, -93.75314126684778],
+	[32.51550064467727, -93.75403576719452],
+	[32.51774572808683, -93.75127179743538],
+	[32.51669878363385, -93.75021761866712],
+	[32.519489350606484, -93.74660337043439],
+	[32.51932173923933, -93.74494688831079],
+	[32.514870611894885, -93.74132471406719]
+  ], {
+    color: '#990000',        // border color
+    fillColor: '#ff0000',    // fill color
+    fillOpacity: 0.35,  
+	minZoom: 13,  // polygon will only show at zoom 13+
+	maxZoom: 18
+  }).addTo(map);
+
+  dtDistrict.bindPopup(
+    "<b>Downtown</b><br>The district has a quiet, worn-in feel, blending historic buildings and a few modern offices with noticeable underdevelopment and pockets of abandonment.It functions as a civic and legal hub with courthouses, city hall, banks, law firms, major hotels, transit stations, churches, and a mix of local restaurants, cafés, nightclubs, and blues- or jazz-tinged dive bars. The area is dotted with abandoned storefronts, pawn shops, liquor stores, murals, memorials, and lingering Civil War monuments."
+  );
+  
+    var mtDistrict = L.polygon([
+    [32.513985845057675, -93.75573669698227],  //Top left of dt border
+	[32.50456129921573, -93.74679169304876],
+	[32.507000731103375, -93.74552245003042],
+	[32.508001691911346, -93.74472595918878],
+	[32.510122111526854, -93.74232086985081],  //spaghetti interchange
+	[32.500415184843206, -93.73262242490202],
+	[32.49630353963823, -93.73316012589714],
+	[32.496272210739946, -93.74443357172325],
+	[32.4927476399455, -93.74456357902127],
+	[32.4927476399556, -93.75130536031392], 
+	[32.49270064474643, -93.75670992824703],
+	[32.49454726395042, -93.7721907534345],
+	[32.503430300685764, -93.77169171201483],
+	[32.51448302901567, -93.77171797741067],
+	[32.51939983803413, -93.7723746108531],
+	[32.51829247208381, -93.76769938074307]
+
+  ], {
+    color: '#009900',        // border color
+    fillColor: '#00ff00',    // fill color
+    fillOpacity: 0.35        // transparency
+  }).addTo(map);
+
+  mtDistrict.bindPopup(
+    "<b>Highland Crest, Midtown</b><br>This area feels practical and lived-in, dominated by working- and middle-class neighborhoods with aging but functional infrastructure. Amenities are everyday and utilitarian, including grocery stores, fast food, strip malls, laundromats, salons, auto-related businesses, schools, and casual dining like BBQ joints and ethnic grills. It’s less flashy than downtown but more livable, centered on routine errands, local services, and community spaces like gyms, bowling alleys, and theaters."
+  );
+  
+    var utDistrict = L.polygon([
+    [32.49507473077989, -93.78024126532819],
+    [32.49793172203276, -93.78762966883247],
+    [32.50286486794331, -93.79122030632655],
+    [32.50846945386283, -93.79419418776376],
+	[32.51164267180981, -93.79219136965297],
+	[32.50795763402724, -93.78469597460202],
+	[32.51056788472626, -93.78026549817515]
+  ], {
+    color: '#674ea7',        // border color
+    fillColor: '#b4a7d6',    // fill color
+    fillOpacity: 0.35,  
+	minZoom: 13,  // polygon will only show at zoom 13+
+	maxZoom: 18
+  }).addTo(map);
+
+  utDistrict.bindPopup(
+    "<b>Magnolia Terrace, Uptown</b><br>This area is the wealthier side of town, marked by newer development, occasional gated communities, and a strong “new money” vibe from professionals like doctors, lawyers, and business owners. It features upscale amenities such as country clubs, golf courses, boutique shops, spas, private schools, refined dining, and wine or cocktail bars. The landscape is rounded out by medical offices, specialty clinics, and well-maintained parks with lakes and walking trails."
+  );
+  
+  
+   var wvDistrict = L.polygon([
+    [32.50279564628583, -93.7917313558476],
+	[32.50428056024752, -93.79882525345042],
+	[32.49888126783219, -93.81396042504097],
+	[32.504051036083396, -93.82009026228913],
+	[32.49560522112808, -93.84527721903822],
+	[32.505584032854884, -93.86809296393737],
+	[32.50658546442492, -93.88302827879248],
+	[32.49414715705024, -93.88242136421347],
+	[32.481860720377156, -93.86803748737023],
+	[32.476024075303926, -93.86257525553441],
+	[32.475819273871885, -93.85541366315398],
+	[32.471320957626205, -93.84138488506065],
+	[32.474699047200446, -93.83920079646884],
+	[32.48561807930178, -93.83337556784305],
+	[32.48564002741921, -93.80732997446157],
+	[32.48643647322549, -93.80597326478676],
+	[32.488548428367864, -93.8038438870487],
+	[32.490976128642, -93.80279089805734],
+	[32.49257482231701, -93.80152731126772],
+	[32.492678402851034, -93.79720966383108],
+	[32.49986545452787, -93.79737512506863],
+	[32.499921274040084, -93.79461192207745]  
+
+  ], {
+    color: '#990000',        // border color
+    fillColor: '#ff0000',    // fill color
+    fillOpacity: 0.35,  
+	minZoom: 13,  // polygon will only show at zoom 13+
+	maxZoom: 18
+  }).addTo(map);
+
+  wvDistrict.bindPopup(
+    "<b>Westvale Suburbs</b><br>Test.<br>Test."
+  );
+  
+  var revitalizedCoords = [
+	[32.518563284050025, -93.74175723784596],
+	[32.526155120137034, -93.74841535534088],
+	[32.53003297101928, -93.74392379931383],
+	[32.53117321369187, -93.7372126666495],
+	[32.531151699814075, -93.73240849865786],
+	[32.52941707951371, -93.72638891906608],
+	[32.52245477092892, -93.72567807948245],
+	[32.51391461219008, -93.7266222169942],
+	[32.5140416561577, -93.73420647060836],
+	[32.5126245763513, -93.73792118294465]
+];
+
+var revitalizedPolygon = L.polygon(revitalizedCoords, {
+  color: '#bf9000',
+  fillColor: '#ffe599',
+  fillOpacity: 0.2
+}).addTo(map).bindPopup("<b>District Soleil, Revitalized</b><br>This area feels like a partially reborn industrial or riverfront district, where a few blocks have been redeveloped into something hip while surrounding structures remain worn or crumbling. It mixes old warehouses converted into lofts with craft breweries, coffee roasters, art spaces, and farm-to-table restaurants. Live music venues, vintage shops, weekend farmers’ markets, and restored historic theaters give it energy without fully masking its rough edges.");
+
+var heightsCoords = [
+	[32.57959842903461, -93.73150270213372],
+	[32.57351233933043, -93.7310819819108],
+	[32.55785205489064, -93.72638393942172],
+	[32.52853338382976, -93.71860061455355],
+	[32.528807975326714, -93.70233830181017],
+	[32.5323821406845, -93.70546199009904],
+	[32.535475455522736, -93.70747007542658],
+	[32.56987095106611, -93.71222998196467],
+	[32.57509390101727, -93.714064529054],
+	[32.58038927949445, -93.71417173602751]
+];
+
+var heightsPolygon = L.polygon(heightsCoords, {
+  color: '#0b5394',
+  fillColor: '#9fc5e8',
+  fillOpacity: 0.2
+}).addTo(map).bindPopup("<b>Franklin Heights</b>");
+
+var suburbCoords = [
+	[32.39838495925279, -93.75175930197217],
+	[32.339222744437045, -93.75196683180246],
+	[32.31660487116414, -93.71518701946447],
+	[32.32116769408882, -93.68959320443385],
+	[32.326915338702825, -93.66512131023512],
+	[32.339712315132545, -93.64859043238204],
+	[32.38403938847525, -93.69705858743515],
+	[32.401067156741746, -93.69776615168968],
+	[32.400967588482665, -93.7143939116711],
+	[32.40853446319405, -93.71687038656194],
+	[32.41170437546862, -93.72439904301164],
+	[32.405760295486786, -93.72955560780332],
+	[32.399062271544615, -93.73996790209422]
+];
+
+var suburbPolygon = L.polygon(suburbCoords, {
+  color: '#000000',
+  fillColor: '#AAAAAA',
+  fillOpacity: 0.2
+}).addTo(map).bindPopup("<b>Dixie Suburbs</b>");
+
+
+  /*
+    ----------------------------
+    MAP MARKERS
+    ----------------------------
+    Example: Police station
+  */
+
+// -------------------------
+// Define icons
+// -------------------------
+var policeIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/policebadge.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var hospitalIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/hospital.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var barIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/bar.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var cityhallIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/cityhall.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var firestationIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/firestation.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var hotelIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/bw.png',
+  iconSize: [80, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var swampIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/swamp.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var libraryIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/library.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var mansionIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/mansion.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var warehouseIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/warehouse.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+// -------------------------
+// Create markers
+// -------------------------
+
+// GOVERNMENT
+var policeHQ = L.marker([32.49954889045339, -93.7566043593193], {icon: policeIcon, opacity: 0})
+.bindPopup("<b>Police HQ</b><br>Status: Active<br>Security Level: Very High");
+
+var downtownPolice = L.marker([32.515380644280675, -93.74941267504738], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Downtown Police Station</b><br>Status: Active<br>Security Level: High");
+
+var cityHall = L.marker([32.51304513876439, -93.75089804095852], { icon: cityhallIcon, opacity: 0 })
+  .bindPopup("<b>City Hall</b><br>Status: Active<br>Security Level: High");
+
+var fireDept = L.marker([32.5004250568676, -93.75797208232918], { icon: firestationIcon, opacity: 0 })
+  .bindPopup("<b>Fire Department</b><br>Status: Active<br>Security Level: Medium");
+  
+var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Jail</b><br>Status: Active<br>Security Level: Very High");
+  
+var hospital = L.marker([32.495463911870104, -93.75045065043382], { icon: hospitalIcon, opacity: 0 })
+  .bindPopup("<b>Hospital</b><br>Status: Active<br>Security Level: Medium");
+  
+var buildProp = L.marker([32.49590344149009, -93.79191697811254], {icon: policeIcon, opacity: 0})
+.bindPopup("<b>Proposed All in One Building Location</b><br>Status: Active<br>Security Level: Very High");
+
+var library = L.marker([32.51316102421295, -93.76536621674977], {icon: libraryIcon, opacity: 0})
+.bindPopup("<b>Library</b><br>Status: Active<br>Security Level: Low");
+
+
+  
+//BUSINESSES
+var hotel = L.marker([32.50273444969439, -93.74550996464066], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Hotel</b><br>Status: Active<br>Security Level: Low");
+
+var casino = L.marker([32.51150773810707, -93.79450807554393], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Casino</b><br>Status: Active<br>Security Level: Low");
+
+var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Golf Club</b><br>Status: Active<br>Security Level: Low");
+ 
+//Has
+
+var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Crownless Kings MC Clubhouse</b><br>Status: Active<br>Security Level: ?");
+//Nar
+
+//Neu
+var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Choctaw Tribe Reserve</b><br>Status: Active<br>Security Level: Low");
+var burntWarehouse = L.marker([32.576123341427575, -93.73060783525948], {icon: warehouseIcon, opacity: 0})
+.bindPopup("<b>Ralston Warehouse</b><br>Status: Destroyed, abandoned<br>Security Level: Low");
+var havelock = L.marker([32.38161256522959, -93.88705040567478], {icon: mansionIcon, opacity: 0})
+.bindPopup("<b>Marcus Havelocks Estate</b><br>Status: Active<br>Security Level: ?");
+
+
+//Nat
+var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
+.bindPopup("<b>Black Bayou</b><br>Status: Active<br>Security Level: Low");
+
+var twelveBayou = L.marker([32.597138124222965, -93.78950571902588], {icon: swampIcon, opacity: 0})
+.bindPopup("<b>Twelve Mile Bayou</b><br>Status: Active<br>Security Level: Low");
+
+var caddoLake = L.marker([32.710262863995126, -94.01088677731555], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Caddo Lake</b><br>Status: Active<br>Security Level: Low");
+
+var crossLake = L.marker([32.502380249210105, -93.8436228229212], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Cross Lake</b><br>Status: Active<br>Security Level: Low");
+
+var redRiver = L.marker([32.50062231950311, -93.70788304528705], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Red River</b><br>Status: Active<br>Security Level: Low");
+
+var cypressReservoir = L.marker([32.6812257887505, -93.66126538768897], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Cypress Bayou Reservoir</b><br>Status: Active<br>Security Level: Low");
+
+
+// -------------------------
+// Group markers
+// -------------------------
+var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, caddoLake, crossLake, redRiver, cypressReservoir, havelock, mcClubhouse]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, hospital, hotel]).addTo(map);
+var mediumLocations = L.layerGroup([downtownPolice, cityHall, casino, golfclub, buildProp, burntWarehouse, library]).addTo(map);
+var minorLocations = L.layerGroup([fireDept, jail, buildProp]).addTo(map);
+
+// -------------------------
+// CSS transition for smooth fade
+// -------------------------
+/* Add in your <style> or CSS file */
+var css = document.createElement("style");
+css.innerHTML = `
+  .leaflet-marker-icon {
+    transition: opacity 0.3s ease;
+  }
+`;
+document.head.appendChild(css);
+
+// -------------------------
+// Fade in/out by zoom
+// -------------------------
+map.on('zoomend', function() {
+  var zoom = map.getZoom();
+
+  // Nature locations (e.g., HQ) visible at zoom 12+
+  natureLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 10 ? 1 : 0);
+  });
+
+  // Important locations (e.g., HQ) visible at zoom 12+
+  importantLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 12 ? 1 : 0);
+  });
+
+  // Medium locations visible at zoom 13+
+  mediumLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 13 ? 1 : 0);
+  });
+
+  // Minor locations (example, zoom 14+)
+  minorLocations.eachLayer(function(marker){
+    marker.setOpacity(zoom >= 14 ? 1 : 0);
+  });
+});
+
+
+</script>
+
+</body>
+</html>
