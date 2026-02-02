@@ -177,7 +177,7 @@
 
   ], {
     color: '#990000',        // border color
-    fillColor: '#ff0000',    // fill color
+    fillColor: '#ff0000',    // fill color 
     fillOpacity: 0.35,  
 	minZoom: 13,  // polygon will only show at zoom 13+
 	maxZoom: 18
@@ -225,6 +225,7 @@ var heightsPolygon = L.polygon(heightsCoords, {
   fillOpacity: 0.2
 }).addTo(map).bindPopup("<b>Franklin Heights</b>");
 
+  /*
 var suburbCoords = [
 	[32.39838495925279, -93.75175930197217],
 	[32.339222744437045, -93.75196683180246],
@@ -246,6 +247,7 @@ var suburbPolygon = L.polygon(suburbCoords, {
   fillColor: '#AAAAAA',
   fillOpacity: 0.2
 }).addTo(map).bindPopup("<b>Dixie Suburbs</b>");
+  */
 
 
   /*
@@ -300,6 +302,13 @@ var hotelIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var fHotelIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fhotel.png',
+  iconSize: [80, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
 var swampIcon = L.icon({
   iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/swamp.png',
   iconSize: [50, 50],
@@ -328,6 +337,83 @@ var warehouseIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var reserveIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/feather.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var lakeIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/lake.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var riverIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/river.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var jailIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/jail.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var casinoIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/casino.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var golfIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/golf.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var cChurchIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/cchurch.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var pChurchIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/pchurch.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var statueIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/statue.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var outArtIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/outart.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var bBallIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/bball.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
 // -------------------------
 // Create markers
 // -------------------------
@@ -335,82 +421,219 @@ var warehouseIcon = L.icon({
 // GOVERNMENT
 var policeHQ = L.marker([32.49954889045339, -93.7566043593193], {icon: policeIcon, opacity: 0})
 .bindPopup("<b>Police HQ</b><br>Status: Active<br>Security Level: Very High");
-
 var downtownPolice = L.marker([32.515380644280675, -93.74941267504738], { icon: policeIcon, opacity: 0 })
   .bindPopup("<b>Downtown Police Station</b><br>Status: Active<br>Security Level: High");
-
 var cityHall = L.marker([32.51304513876439, -93.75089804095852], { icon: cityhallIcon, opacity: 0 })
   .bindPopup("<b>City Hall</b><br>Status: Active<br>Security Level: High");
-
 var fireDept = L.marker([32.5004250568676, -93.75797208232918], { icon: firestationIcon, opacity: 0 })
   .bindPopup("<b>Fire Department</b><br>Status: Active<br>Security Level: Medium");
-  
 var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: policeIcon, opacity: 0 })
   .bindPopup("<b>Jail</b><br>Status: Active<br>Security Level: Very High");
-  
 var hospital = L.marker([32.495463911870104, -93.75045065043382], { icon: hospitalIcon, opacity: 0 })
   .bindPopup("<b>Hospital</b><br>Status: Active<br>Security Level: Medium");
-  
 var buildProp = L.marker([32.49590344149009, -93.79191697811254], {icon: policeIcon, opacity: 0})
 .bindPopup("<b>Proposed All in One Building Location</b><br>Status: Active<br>Security Level: Very High");
-
 var library = L.marker([32.51316102421295, -93.76536621674977], {icon: libraryIcon, opacity: 0})
 .bindPopup("<b>Library</b><br>Status: Active<br>Security Level: Low");
 
 
   
-//BUSINESSES
-var hotel = L.marker([32.50273444969439, -93.74550996464066], {icon: hotelIcon, opacity: 0})
-.bindPopup("<b>Hotel</b><br>Status: Active<br>Security Level: Low");
-
-var casino = L.marker([32.51150773810707, -93.79450807554393], {icon: hotelIcon, opacity: 0})
+//NARLETHOTEP
+var casino = L.marker([32.51150773810707, -93.79450807554393], {icon: casinoIcon, opacity: 0})
 .bindPopup("<b>Casino</b><br>Status: Active<br>Security Level: Low");
-
-var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: hotelIcon, opacity: 0})
+var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: golfIcon, opacity: 0})
 .bindPopup("<b>Golf Club</b><br>Status: Active<br>Security Level: Low");
  
-//Has
-
+ 
+//HASTUR
 var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: hotelIcon, opacity: 0})
 .bindPopup("<b>Crownless Kings MC Clubhouse</b><br>Status: Active<br>Security Level: ?");
-//Nar
 
-//Neu
-var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: hotelIcon, opacity: 0})
+
+//Neutral
+var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: reserveIcon, opacity: 0})
 .bindPopup("<b>Choctaw Tribe Reserve</b><br>Status: Active<br>Security Level: Low");
 var burntWarehouse = L.marker([32.576123341427575, -93.73060783525948], {icon: warehouseIcon, opacity: 0})
 .bindPopup("<b>Ralston Warehouse</b><br>Status: Destroyed, abandoned<br>Security Level: Low");
 var havelock = L.marker([32.38161256522959, -93.88705040567478], {icon: mansionIcon, opacity: 0})
 .bindPopup("<b>Marcus Havelocks Estate</b><br>Status: Active<br>Security Level: ?");
+var bwhotel = L.marker([32.50273444969439, -93.74550996464066], {icon: hotelIcon, opacity: 0})
+.bindPopup("<b>Best Western Hotel</b><br>Status: Active<br>Security Level: Low");
 
-
-//Nat
+//Nature
 var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
 .bindPopup("<b>Black Bayou</b><br>Status: Active<br>Security Level: Low");
-
 var twelveBayou = L.marker([32.597138124222965, -93.78950571902588], {icon: swampIcon, opacity: 0})
 .bindPopup("<b>Twelve Mile Bayou</b><br>Status: Active<br>Security Level: Low");
-
-var caddoLake = L.marker([32.710262863995126, -94.01088677731555], {icon: hotelIcon, opacity: 0})
+var caddoLake = L.marker([32.710262863995126, -94.01088677731555], {icon: lakeIcon, opacity: 0})
 .bindPopup("<b>Caddo Lake</b><br>Status: Active<br>Security Level: Low");
-
-var crossLake = L.marker([32.502380249210105, -93.8436228229212], {icon: hotelIcon, opacity: 0})
+var crossLake = L.marker([32.502380249210105, -93.8436228229212], {icon: lakeIcon, opacity: 0})
 .bindPopup("<b>Cross Lake</b><br>Status: Active<br>Security Level: Low");
-
-var redRiver = L.marker([32.50062231950311, -93.70788304528705], {icon: hotelIcon, opacity: 0})
+var redRiver = L.marker([32.50062231950311, -93.70788304528705], {icon: riverIcon, opacity: 0})
 .bindPopup("<b>Red River</b><br>Status: Active<br>Security Level: Low");
-
-var cypressReservoir = L.marker([32.6812257887505, -93.66126538768897], {icon: hotelIcon, opacity: 0})
+var cypressReservoir = L.marker([32.6812257887505, -93.66126538768897], {icon: lakeIcon, opacity: 0})
 .bindPopup("<b>Cypress Bayou Reservoir</b><br>Status: Active<br>Security Level: Low");
 
+
+
+// =====================
+// DOWNTOWN
+// =====================
+
+var downtownCatholicChurch = L.marker([32.513789202508825, -93.74699039354155],{ icon: hotelIcon, opacity: 0 })
+.bindPopup("<b>Catholic Church</b>");
+
+var downtownWhiskey = L.marker(
+  [32.516113582605165, -93.74338711624323],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Whiskey Bar</b>");
+
+var downtownDefacedMemorial = L.marker(
+  [32.51393675122211, -93.7412305124366],
+  { icon: statueIcon, opacity: 0 }
+).bindPopup("<b>Defaced Memorial</b>");
+
+var downtownFineArt = L.marker(
+  [32.51256888901584, -93.74641446831083],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Fine Art Gallery</b>");
+
+var downtownComedyBar = L.marker(
+  [32.51184868074393, -93.74672537046939],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Comedy Bar</b>");
+
+var downtownVelvetMirage = L.marker(
+  [32.5157584629978, -93.74423815310254],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Velvet Mirage Club</b>");
+
+var downtownThreeSunsPawn = L.marker(
+  [32.51771329032037, -93.74839477998073],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Three Suns Pawn</b>");
+
+
+// =====================
+// MIDTOWN
+// =====================
+
+var midtownGunStore = L.marker(
+  [32.50721323051122, -93.75430422608098],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Gun Store</b>");
+
+var midtownPetStore = L.marker(
+  [32.500543956370144, -93.73397127450566],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Pet Store</b>");
+
+var midtownProtestantChurch = L.marker(
+  [32.506962920458136, -93.75141733637167],
+  { icon: pChurchIcon, opacity: 0 }
+).bindPopup("<b>Protestant Church</b>");
+
+
+// =====================
+// UPTOWN
+// =====================
+
+var uptownFineJewelry = L.marker(
+  [32.506607239158484, -93.79038871854934],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Fine Jewelry Store</b>");
+
+var uptownFrenchRestaurant = L.marker(
+  [32.508299991516225, -93.7915930650738],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>French Restaurant</b>");
+
+var uptownCigarLounge = L.marker(
+  [32.5039684795301, -93.7883801107973],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Cigar Lounge</b>");
+
+
+// =====================
+// REVITALIZED DISTRICT
+// =====================
+
+var revitalizedFarmToTable = L.marker(
+  [32.521795276818594, -93.73891354435355],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Farm-to-Table Restaurant</b>");
+
+var revitalizedGildedTaphouse = L.marker(
+  [32.51999772221097, -93.74144286163792],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Gilded Taphouse</b>");
+
+var revitalizedOutdoorArt = L.marker(
+  [32.522608050571776, -93.74249333678688],
+  { icon: outArtIcon, opacity: 0 }
+).bindPopup("<b>Outdoor Art Installation</b>");
+
+var revitalizedTacos = L.marker(
+  [32.517639349706506, -93.73823069675457],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Taco Spot</b>");
+
+var revitalizedRaveHall = L.marker(
+  [32.5164395284143, -93.72848508005411],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Underground Rave Hall</b>");
+
+var revitalizedVinylShop = L.marker(
+  [32.51626294760965, -93.73471672872273],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Vinyl Record Shop</b>");
+
+
+// =====================
+// HEIGHTS
+// =====================
+
+var heightsBaptistChurch = L.marker(
+  [32.57250928191595, -93.7301441187511],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Baptist Church</b>");
+
+var heightsTrapHouse = L.marker(
+  [32.569240362018526, -93.71901116198914],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Trap House</b>");
+
+var heightsBasketballPark = L.marker(
+  [32.572392055104004, -93.72376981503584],
+  { icon: bballIcon, opacity: 0 }
+).bindPopup("<b>Basketball Court Park</b>");
 
 // -------------------------
 // Group markers
 // -------------------------
-var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, caddoLake, crossLake, redRiver, cypressReservoir, havelock, mcClubhouse]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, hospital, hotel]).addTo(map);
-var mediumLocations = L.layerGroup([downtownPolice, cityHall, casino, golfclub, buildProp, burntWarehouse, library]).addTo(map);
-var minorLocations = L.layerGroup([fireDept, jail, buildProp]).addTo(map);
+var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, caddoLake, crossLake, redRiver, cypressReservoir, havelock]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, hospital, bwhotel]).addTo(map);
+var mediumLocations = L.layerGroup([downtownPolice, cityHall, casino, golfclub, burntWarehouse, library]).addTo(map);
+var minorLocations = L.layerGroup([fireDept, jail, downtownCatholicChurch, downtownDefacedMemorial, midtownProtestantChurch, revitalizedOutdoorArt, heightsBasketballPark]).addTo(map);
+
+//LOCKED
+// heightsTrapHouse  heightsBasketballPark  heightsBaptistChurch
+// revitalizedVinylShop  revitalizedRaveHall  RtevitalizedTacos  revitalizedOutdoorArt revitalizedGildedTaphouse  revitalizedFarmToTable
+// downtownCatholicChurch, downtownWhiskey, downtownDefacedMemorial, downtownFineArt, downtownComedyBar, downtownVelvetMirage, downtownThreeSunsPawn
+// midtownGunStore, midtownPetStore, midtownProtestantChurch
+// uptownFineJewelry, uptownFrenchRestaurant, uptownCigarLounge
+
+32.67160107478138, -93.87860340598624 //MC Meth Lab
+32.36036161199495, -93.61136284656604 // Grand Bayou
+32.28474147111808, -93.7651372439974 //Cirque de Lune Tent
+32.45444421995224, -93.82635537364374 //Shreveport Regional Airport
+32.3994789227689, -93.75420910673044 //The Porthole
+32.44634248776127, -93.59660751703328 //Trailer Park
+32.53460800020962, -93.76568980693145 //Used car lot
+32.49319775888183, -93.8442117873227 //Yacht Club
+32.488586361451894, -93.84106898915458 //Mayors House
+32.48489184117536, -93.87024322707722 //Madame Noires House
+32.49376028297369, -93.80365943967688 //Police Chiefs House
 
 // -------------------------
 // CSS transition for smooth fade
@@ -456,3 +679,4 @@ map.on('zoomend', function() {
 
 </body>
 </html>
+
