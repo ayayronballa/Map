@@ -98,9 +98,9 @@
 	maxZoom: 18
   }).addTo(map);
 
-  dtDistrict.bindPopup(
-    "<b>Downtown</b><br>The district has a quiet, worn-in feel, blending historic buildings and a few modern offices with noticeable underdevelopment and pockets of abandonment.It functions as a civic and legal hub with courthouses, city hall, banks, law firms, major hotels, transit stations, churches, and a mix of local restaurants, cafés, nightclubs, and blues- or jazz-tinged dive bars. The area is dotted with abandoned storefronts, pawn shops, liquor stores, murals, memorials, and lingering Civil War monuments."
-  );
+dtDistrict.bindPopup(
+  "<b>Downtown</b><br>A quiet, worn-in district of historic buildings and scattered modern offices. Courthouses, city hall, banks, and local restaurants sit alongside nightclubs, dive bars, murals, memorials, and abandoned storefronts."
+);
   
     var mtDistrict = L.polygon([
     [32.513985845057675, -93.75573669698227],  //Top left of dt border
@@ -126,9 +126,9 @@
     fillOpacity: 0.35        // transparency
   }).addTo(map);
 
-  mtDistrict.bindPopup(
-    "<b>Highland Crest, Midtown</b><br>This area feels practical and lived-in, dominated by working- and middle-class neighborhoods with aging but functional infrastructure. Amenities are everyday and utilitarian, including grocery stores, fast food, strip malls, laundromats, salons, auto-related businesses, schools, and casual dining like BBQ joints and ethnic grills. It’s less flashy than downtown but more livable, centered on routine errands, local services, and community spaces like gyms, bowling alleys, and theaters."
-  );
+mtDistrict.bindPopup(
+  "<b>Highland Crest, Midtown</b><br>A practical, lived-in area of working and middle-class neighborhoods with aging but functional infrastructure. Strip malls, grocery stores, fast food, schools, auto shops, and casual dining populate the area."
+);
   
     var utDistrict = L.polygon([
     [32.49507473077989, -93.78024126532819],
@@ -146,10 +146,9 @@
 	maxZoom: 18
   }).addTo(map);
 
-  utDistrict.bindPopup(
-    "<b>Magnolia Terrace, Uptown</b><br>This area is the wealthier side of town, marked by newer development, occasional gated communities, and a strong “new money” vibe from professionals like doctors, lawyers, and business owners. It features upscale amenities such as country clubs, golf courses, boutique shops, spas, private schools, refined dining, and wine or cocktail bars. The landscape is rounded out by medical offices, specialty clinics, and well-maintained parks with lakes and walking trails."
-  );
-  
+utDistrict.bindPopup(
+  "<b>Magnolia Terrace, Uptown</b><br>The city’s wealthier district, defined by newer development, occasional gated communities, and a polished “new money” feel. Country clubs, boutiques, private schools, refined dining, medical offices, and manicured parks shape the area."
+);
   
    var wvDistrict = L.polygon([
     [32.50279564628583, -93.7917313558476],
@@ -184,7 +183,7 @@
   }).addTo(map);
 
   wvDistrict.bindPopup(
-    "<b>Westvale Suburbs</b><br>Test.<br>Test."
+    "<b>Westvale Suburbs</b><br>A quiet, affluent suburban district near Cross Lake, marked by spacious homes, manicured lawns, private docks, and winding roads that favor privacy over visibility."
   );
   
   var revitalizedCoords = [
@@ -204,7 +203,7 @@ var revitalizedPolygon = L.polygon(revitalizedCoords, {
   color: '#bf9000',
   fillColor: '#ffe599',
   fillOpacity: 0.2
-}).addTo(map).bindPopup("<b>District Soleil, Revitalized</b><br>This area feels like a partially reborn industrial or riverfront district, where a few blocks have been redeveloped into something hip while surrounding structures remain worn or crumbling. It mixes old warehouses converted into lofts with craft breweries, coffee roasters, art spaces, and farm-to-table restaurants. Live music venues, vintage shops, weekend farmers’ markets, and restored historic theaters give it energy without fully masking its rough edges.");
+}).addTo(map).bindPopup("<b>District Soleil</b><br>A patchwork riverfront district where a few redeveloped blocks contain lofts, breweries, art spaces, and music venues, while surrounding warehouses and factories remain worn and crumbling.");
 
 var heightsCoords = [
 	[32.57959842903461, -93.73150270213372],
@@ -223,7 +222,7 @@ var heightsPolygon = L.polygon(heightsCoords, {
   color: '#0b5394',
   fillColor: '#9fc5e8',
   fillOpacity: 0.2
-}).addTo(map).bindPopup("<b>Franklin Heights</b>");
+}).addTo(map).bindPopup("<b>Franklin Heights</b><br>A struggling neighborhood hemmed in by abandoned factories and swampy lowlands, marked by decaying housing, heavy police presence, and a reputation for high crime and long-standing neglect.");
 
   /*
 var suburbCoords = [
@@ -304,7 +303,7 @@ var hotelIcon = L.icon({
 
 var fHotelIcon = L.icon({
   iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fhotel.png',
-  iconSize: [80, 50],
+  iconSize: [50, 50],
   iconAnchor: [14, 28],
   popupAnchor: [0, -28],
 });
@@ -414,74 +413,116 @@ var bBallIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var fireIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fire.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var circusIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/circus.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
 // -------------------------
 // Create markers
 // -------------------------
 
+var hell = L.marker([44.58199415185736, -79.42783006751425], {icon: fireIcon, opacity: 0})
+.bindPopup("<b>Hell</b><br>A place where damned souls gather.");
+
 // GOVERNMENT
 var policeHQ = L.marker([32.49954889045339, -93.7566043593193], {icon: policeIcon, opacity: 0})
-.bindPopup("<b>Police HQ</b><br>Status: Active<br>Security Level: Very High");
+.bindPopup("<b>Police HQ</b><br>A large building housing the central operations for Shreveport Police.");
 var downtownPolice = L.marker([32.515380644280675, -93.74941267504738], { icon: policeIcon, opacity: 0 })
-  .bindPopup("<b>Downtown Police Station</b><br>Status: Active<br>Security Level: High");
+  .bindPopup("<b>Downtown Police Station</b><br>A police station that services the Northern and Central parts of the city.");
+var southPolice = L.marker([32.44651585519162, -93.75793581960598], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Dixie Police Station</b><br>A police station that services the Western and Southern parts of the city.");
+var eastPolice = L.marker([32.528270021848975, -93.69815896716939], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Franklin Police Station</b><br>A police station that services the Eastern part of the city.");
+var sheriff = L.marker([32.59679885923847, -93.82885700202853], { icon: policeIcon, opacity: 0 })
+  .bindPopup("<b>Louisiana Sheriff's Department</b><br>A police station that services the state highways and rural areas.");
 var cityHall = L.marker([32.51304513876439, -93.75089804095852], { icon: cityhallIcon, opacity: 0 })
-  .bindPopup("<b>City Hall</b><br>Status: Active<br>Security Level: High");
+  .bindPopup("<b>City Hall</b><br>Where taxes go up, services go down, and you go crazy.");
 var fireDept = L.marker([32.5004250568676, -93.75797208232918], { icon: firestationIcon, opacity: 0 })
-  .bindPopup("<b>Fire Department</b><br>Status: Active<br>Security Level: Medium");
-var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: policeIcon, opacity: 0 })
-  .bindPopup("<b>Jail</b><br>Status: Active<br>Security Level: Very High");
+  .bindPopup("<b>Fire Department</b><br>Founded in 1849. Operate the original Fire Hall as a museum.");
+var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: jailIcon, opacity: 0 })
+  .bindPopup("<b>Jail</b><br>Better than the Best Western.");
 var hospital = L.marker([32.495463911870104, -93.75045065043382], { icon: hospitalIcon, opacity: 0 })
-  .bindPopup("<b>Hospital</b><br>Status: Active<br>Security Level: Medium");
+  .bindPopup("<b>Hospital</b><br>Where the sick and weak go.");
 var buildProp = L.marker([32.49590344149009, -93.79191697811254], {icon: policeIcon, opacity: 0})
-.bindPopup("<b>Proposed All in One Building Location</b><br>Status: Active<br>Security Level: Very High");
+.bindPopup("<b>Proposed All in One Building Location</b>");
 var library = L.marker([32.51316102421295, -93.76536621674977], {icon: libraryIcon, opacity: 0})
-.bindPopup("<b>Library</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Library</b><br>A place for nerds and dorks.");
 
 
   
 //NARLETHOTEP
 var casino = L.marker([32.51150773810707, -93.79450807554393], {icon: casinoIcon, opacity: 0})
-.bindPopup("<b>Casino</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>The Obsidian Pharaoh Casino</b><br>A luxury hotel, casino and resort. Offering boxing matches, fine dining, entertainment & more.");
 var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: golfIcon, opacity: 0})
-.bindPopup("<b>Golf Club</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Cross Lake Country Club</b><br>A very luxurious and exclusive country club. Featuring three world-class golf courses, a driving range, a premium restaurant, and three bars.");
  
  
 //HASTUR
 var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: hotelIcon, opacity: 0})
-.bindPopup("<b>Crownless Kings MC Clubhouse</b><br>Status: Active<br>Security Level: ?");
+.bindPopup("<b>Crownless Kings MC Clubhouse</b><br>A target of Fire Team's investigation.");
 
+var circusTent = L.marker([32.28474147111808, -93.7651372439974], {icon: circusIcon, opacity: 0})
+.bindPopup("<b>Cirque de Lune</b><br>A Gothic-French circus act featuring animals, acrobatics, fire and swords.");
 
 //Neutral
 var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: reserveIcon, opacity: 0})
-.bindPopup("<b>Choctaw Tribe Reserve</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Jena Band of Choctaw Indians Tribal Reserve</b><br>Population: 327  |  Federally Recognized: 1995<br>Government: Tribal Council  |  Chief: Laura Smith");
 var burntWarehouse = L.marker([32.576123341427575, -93.73060783525948], {icon: warehouseIcon, opacity: 0})
-.bindPopup("<b>Ralston Warehouse</b><br>Status: Destroyed, abandoned<br>Security Level: Low");
+.bindPopup("<b>Ralston Warehouse</b><br>Burned to the ground, most of the wreckage has been cleared.");
 var havelock = L.marker([32.38161256522959, -93.88705040567478], {icon: mansionIcon, opacity: 0})
-.bindPopup("<b>Marcus Havelocks Estate</b><br>Status: Active<br>Security Level: ?");
+.bindPopup("<b>Marcus Havelocks Estate</b><br>The high-tech, high-security luxury compound of another eccentric techbro billionaire.");
 var bwhotel = L.marker([32.50273444969439, -93.74550996464066], {icon: hotelIcon, opacity: 0})
-.bindPopup("<b>Best Western Hotel</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Best Western Hotel</b><br>A perfectly fine hotel...");
+var fhotel = L.marker([32.51857661903307, -93.74563243679641], {icon: fHotelIcon, opacity: 0})
+.bindPopup("<b>Hyatt Hotel</b><br>The new-money no-class hotel");
 
 //Nature
 var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
-.bindPopup("<b>Black Bayou</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Black Bayou</b><br>A 66-mile river and marsh flowing from Texas into Louisiana that feeds into Twelve Mile Bayou and ultimately the Red River.");
 var twelveBayou = L.marker([32.597138124222965, -93.78950571902588], {icon: swampIcon, opacity: 0})
-.bindPopup("<b>Twelve Mile Bayou</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Twelve Mile Bayou</b><br>A historic waterway connecting Caddo Lake to the Red River through Shreveport, used for boating and fishing.");
 var caddoLake = L.marker([32.710262863995126, -94.01088677731555], {icon: lakeIcon, opacity: 0})
-.bindPopup("<b>Caddo Lake</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Caddo Lake</b><br>A sprawling lake and wetland on the Texas–Louisiana border with cypress swamps, abundant wildlife, and fishing & recreation opportunities.");
 var crossLake = L.marker([32.502380249210105, -93.8436228229212], {icon: lakeIcon, opacity: 0})
-.bindPopup("<b>Cross Lake</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Cross Lake</b><br>A large man-made 8,575-acre reservoir near Shreveport that serves as the city’s water supply and recreational lake.");
+var wallaceLake = L.marker([32.319095981413994, -93.69787162737968], {icon: lakeIcon, opacity: 0})
+.bindPopup("<b>Wallace Lake</b><br>A freshwater lake in northwest Louisiana known for fishing and bald cypress scenery, with an Army Corps dam controlling outflow.");
 var redRiver = L.marker([32.50062231950311, -93.70788304528705], {icon: riverIcon, opacity: 0})
-.bindPopup("<b>Red River</b><br>Status: Active<br>Security Level: Low");
-var cypressReservoir = L.marker([32.6812257887505, -93.66126538768897], {icon: lakeIcon, opacity: 0})
-.bindPopup("<b>Cypress Bayou Reservoir</b><br>Status: Active<br>Security Level: Low");
+.bindPopup("<b>Red River</b><br>A major southern U.S. river that passes through Shreveport and provides extensive recreational fishing, boating, and scenic riverfront access.");
 
+var cypressBayou = L.marker(
+[32.6812257887505, -93.66126538768897],
+{icon: swampIcon, opacity: 0}
+).bindPopup("<b>Cypress Bayou</b><br>A network of bayous and waterways in northwest Louisiana, often associated with fishing, paddling, and scenic wetlands near Cross Lake.");
 
+var cypressReservoir = L.marker(
+[32.6812257887505, -93.66126538768897],
+{icon: lakeIcon, opacity: 0}
+).bindPopup("<b>Cypress Bayou Reservoir</b><br>A reservoir formed by damming the Black Bayou and Cypress Bayou, used for flood control and water recreation.");
+
+var grandBayou = L.marker(
+[32.363436340462194, -93.60438922679143],
+{icon: swampIcon, opacity: 0}
+).bindPopup("<b>Grand Bayou</b><br>A sprawling bayou that flanks the red river on both sides. Known for fishing, large boats, river cruises, and rednecks.");
 
 // =====================
 // DOWNTOWN
 // =====================
 
-var downtownCatholicChurch = L.marker([32.513789202508825, -93.74699039354155],{ icon: hotelIcon, opacity: 0 })
-.bindPopup("<b>Catholic Church</b>");
+var downtownCatholicChurch = L.marker(
+[32.513789202508825, -93.74699039354155],
+{icon: cChurchIcon, opacity: 0}
+).bindPopup("<b>Catholic Church</b><br>Founded in 1803. Operates Sunday-Friday.");
 
 var downtownWhiskey = L.marker(
   [32.516113582605165, -93.74338711624323],
@@ -491,7 +532,7 @@ var downtownWhiskey = L.marker(
 var downtownDefacedMemorial = L.marker(
   [32.51393675122211, -93.7412305124366],
   { icon: statueIcon, opacity: 0 }
-).bindPopup("<b>Defaced Memorial</b>");
+).bindPopup("<b>Civil War Memorial</b><br>A monument honouring Lawrence Beaumont, a local Confederate Hero. He single-handidly repelled a Union attack on a key hill.");
 
 var downtownFineArt = L.marker(
   [32.51256888901584, -93.74641446831083],
@@ -531,7 +572,12 @@ var midtownPetStore = L.marker(
 var midtownProtestantChurch = L.marker(
   [32.506962920458136, -93.75141733637167],
   { icon: pChurchIcon, opacity: 0 }
-).bindPopup("<b>Protestant Church</b>");
+).bindPopup("<b>Protestant Church</b><br>Founded in 1855. Operates all week.");
+
+var shrevAir = L.marker(
+  [32.45444421995224, -93.82635537364374],
+  { icon: hotelIcon, opacity: 0 }
+).bindPopup("<b>Shreveport Regional Airport</b><br>The main commercial airport serving Shreveport–Bossier City and the Ark-La-Tex region, connecting the area with major U.S. hubs.");
 
 
 // =====================
@@ -571,7 +617,7 @@ var revitalizedGildedTaphouse = L.marker(
 var revitalizedOutdoorArt = L.marker(
   [32.522608050571776, -93.74249333678688],
   { icon: outArtIcon, opacity: 0 }
-).bindPopup("<b>Outdoor Art Installation</b>");
+).bindPopup("<b>Soul of Shreveport Art Park</b><br>A park taken over by young artists, displaying and selling their work.");
 
 var revitalizedTacos = L.marker(
   [32.517639349706506, -93.73823069675457],
@@ -596,7 +642,7 @@ var revitalizedVinylShop = L.marker(
 var heightsBaptistChurch = L.marker(
   [32.57250928191595, -93.7301441187511],
   { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Baptist Church</b>");
+).bindPopup("<b>Baptist Church</b><br>Founded in 1962. Operates Sunday and Wednesday.");
 
 var heightsTrapHouse = L.marker(
   [32.569240362018526, -93.71901116198914],
@@ -604,29 +650,31 @@ var heightsTrapHouse = L.marker(
 ).bindPopup("<b>Trap House</b>");
 
 var heightsBasketballPark = L.marker(
-  [32.572392055104004, -93.72376981503584],
+  [32.55137260482822, -93.71270302335984],
   { icon: bBallIcon, opacity: 0 }
-).bindPopup("<b>Basketball Court Park</b>");
+).bindPopup("<b>Hoop There It Is</b><br>A large park dominated by basketball courts, some having stands around them. Funded by hip hop duo Tag Team in 1996.");
+
 
 // -------------------------
 // Group markers
 // -------------------------
-var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, caddoLake, crossLake, redRiver, cypressReservoir, havelock]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, hospital, bwhotel]).addTo(map);
-var mediumLocations = L.layerGroup([downtownPolice, cityHall, casino, golfclub, burntWarehouse, library]).addTo(map);
-var minorLocations = L.layerGroup([fireDept, jail, downtownCatholicChurch, downtownDefacedMemorial, midtownProtestantChurch, revitalizedOutdoorArt, heightsBasketballPark]).addTo(map);
+var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, hospital, bwhotel, fhotel, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
+var mediumLocations = L.layerGroup([cityHall, casino, golfclub, burntWarehouse, library, southPolice, eastPolice, sheriff]).addTo(map);
+var minorLocations = L.layerGroup([hell, fireDept, jail, downtownCatholicChurch, downtownDefacedMemorial, midtownProtestantChurch, revitalizedOutdoorArt, heightsBasketballPark, downtownPolice, heightsBaptistChurch]).addTo(map);
 
-//LOCKED
-// heightsTrapHouse  heightsBasketballPark  heightsBaptistChurch
-// revitalizedVinylShop  revitalizedRaveHall  RtevitalizedTacos  revitalizedOutdoorArt revitalizedGildedTaphouse  revitalizedFarmToTable
-// downtownCatholicChurch, downtownWhiskey, downtownDefacedMemorial, downtownFineArt, downtownComedyBar, downtownVelvetMirage, downtownThreeSunsPawn
-// midtownGunStore, midtownPetStore, midtownProtestantChurch
-// uptownFineJewelry, uptownFrenchRestaurant, uptownCigarLounge
+
+/*
+LOCKED
+heightsTrapHouse    heightsBaptistChurch
+revitalizedVinylShop  revitalizedRaveHall  RtevitalizedTacos  revitalizedOutdoorArt revitalizedGildedTaphouse  revitalizedFarmToTable
+downtownCatholicChurch, downtownWhiskey, downtownDefacedMemorial, downtownFineArt, downtownComedyBar, downtownVelvetMirage, downtownThreeSunsPawn
+midtownGunStore, midtownPetStore, midtownProtestantChurch
+uptownFineJewelry, uptownFrenchRestaurant, uptownCigarLounge
+
 
 32.67160107478138, -93.87860340598624 //MC Meth Lab
-32.36036161199495, -93.61136284656604 // Grand Bayou
-32.28474147111808, -93.7651372439974 //Cirque de Lune Tent
-32.45444421995224, -93.82635537364374 //Shreveport Regional Airport
+
 32.3994789227689, -93.75420910673044 //The Porthole
 32.44634248776127, -93.59660751703328 //Trailer Park
 32.53460800020962, -93.76568980693145 //Used car lot
@@ -634,6 +682,7 @@ var minorLocations = L.layerGroup([fireDept, jail, downtownCatholicChurch, downt
 32.488586361451894, -93.84106898915458 //Mayors House
 32.48489184117536, -93.87024322707722 //Madame Noires House
 32.49376028297369, -93.80365943967688 //Police Chiefs House
+*\
 
 // -------------------------
 // CSS transition for smooth fade
@@ -679,5 +728,4 @@ map.on('zoomend', function() {
 
 </body>
 </html>
-
 
