@@ -655,6 +655,20 @@ var newsIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var trailerIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/trailer.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var cdealerIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/cardealer.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
 // -------------------------
 // Create markers
 // -------------------------
@@ -712,10 +726,12 @@ var mtPark = L.marker([32.51146008402828, -93.79473583801732], {icon: parkIcon, 
  
 //HASTUR
 var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: mcIcon, opacity: 0})
-.bindPopup("<b>Crownless Kings MC Clubhouse</b><br>A target of Fire Team's investigation.");
+.bindPopup("<b>Crownless Kings MC Clubhouse</b><br>An outlaw motorcycle gang's headquarters. A mechanic shop and scrapyard flank the clubhouse. The clubhouse has a large bar thats known to throw wild parties.");
 
 var circusTent = L.marker([32.28474147111808, -93.7651372439974], {icon: circusIcon, opacity: 0})
 .bindPopup("<b>Cirque de Lune</b><br>A Gothic-French circus act featuring animals, acrobatics, fire and swords.");
+var trailerPark = L.marker([32.44364336743742, -93.61344470498219], {icon: trailerIcon, opacity: 0})
+.bindPopup("<b>Swampy Acres</b><br>A dingy trailer park next to a swamp.");
 
 //Neutral
 var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: reserveIcon, opacity: 0})
@@ -736,6 +752,9 @@ var dump = L.marker([32.62138620397939, -93.52301224273945], {icon: dumpIcon, op
 .bindPopup("<b>Shreveport Regional Landfill</b><br>A landfill that services the City of Shreveport and surrounding areas.");
 var armySurp = L.marker([32.52466105121435, -93.75767591531579], {icon: armyIcon, opacity: 0})
 .bindPopup("<b>Don's Army Surpless</b><br>Selling midrange survival gear and used army kit since 1997.");
+
+var usedCar = L.marker([32.53963052880406, -93.77211613496584], {icon: cdealerIcon, opacity: 0})
+.bindPopup("<b>Bayou Blowout Used Cars!</b><br>Used car lot, mixed reviews.");
 
 //Nature
 var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
@@ -972,11 +991,11 @@ var heightsBasketballPark = L.marker(
 // Group markers
 // -------------------------
 var natureLocations = L.layerGroup([reserve, blackBayou, cypressBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, college, university, bwhotel, bHotel, southPolice, sheriff, golfclub, fhotel, mall, dump]).addTo(map);
-var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, cityHall, casino, revitalizedFarmToTable, midPark,  hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, heightsBasketballPark, burntWarehouse, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, fhotel, mall, dump]).addTo(map);
+var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, bwhotel, cityHall, casino, revitalizedFarmToTable, midPark,  hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, heightsBasketballPark, burntWarehouse, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
 var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, radio, news, shisha, gunStore, midtownPetStore, revitalizedTacos, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, revitalizedOutdoorArt, downtownPolice ]).addTo(map);
 
-//train stations
+//TOO ADD: Trailer Park,  Used Car Dealership
 
 /*
 LOCKED
