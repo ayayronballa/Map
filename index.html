@@ -115,10 +115,12 @@ dtDistrict.bindPopup(
 	[32.4927476399556, -93.75130536031392], 
 	[32.49270064474643, -93.75670992824703],
 	[32.49454726395042, -93.7721907534345],
-	[32.503430300685764, -93.77169171201483],
-	[32.51448302901567, -93.77171797741067],
+	[32.49515067605377, -93.78022487709836],
+	[32.51324431436365, -93.78001245707016],
 	[32.51939983803413, -93.7723746108531],
 	[32.51829247208381, -93.76769938074307]
+	
+	
 
   ], {
     color: '#009900',        // border color
@@ -131,13 +133,15 @@ mtDistrict.bindPopup(
 );
   
     var utDistrict = L.polygon([
-    [32.49507473077989, -93.78024126532819],
+    
+	[32.49507473077989, -93.78024126532819],
     [32.49793172203276, -93.78762966883247],
     [32.50286486794331, -93.79122030632655],
-    [32.50846945386283, -93.79419418776376],
+	[32.51343671192723, -93.79761678990731],
 	[32.51164267180981, -93.79219136965297],
 	[32.50795763402724, -93.78469597460202],
 	[32.51056788472626, -93.78026549817515]
+	
   ], {
     color: '#674ea7',        // border color
     fillColor: '#b4a7d6',    // fill color
@@ -387,6 +391,13 @@ var cChurchIcon = L.icon({
 
 var pChurchIcon = L.icon({
   iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/pchurch.png',
+  iconSize: [40, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var bChurchIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/bchurch.png',
   iconSize: [50, 50],
   iconAnchor: [14, 28],
   popupAnchor: [0, -28],
@@ -427,6 +438,223 @@ var circusIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var nClubIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/nightclub.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var cClubIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/countryclub.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var chucksIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/chucks.png',
+  iconSize: [60, 30],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var mcIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/mc.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var fineArtIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fineart.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var pawnIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/pawn.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var sheriffIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/star.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var whiskeyIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/whiskey.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var airportIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/airport.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var beerIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/beer-mug.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var bHotelIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/bhotel.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var petIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/pet.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var fMarketIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/market.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var parkIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/park.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var eventIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/eventspace.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var comedyIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/comedy.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+//------
+var stationIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/station.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var dumpIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/dump.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var collegeIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/college.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var schoolIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/school.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var shishaIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/hookah.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var gunIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/gun.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var diamondIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/diamond.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var fResIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fres.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var rResIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/rres.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var armyIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/army.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var mallIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/mall.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var tacoIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/taco.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var vinylIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/vinyl.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var radioIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/radio.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var newsIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/news.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
 // -------------------------
 // Create markers
 // -------------------------
@@ -436,39 +664,54 @@ var hell = L.marker([44.58199415185736, -79.42783006751425], {icon: fireIcon, op
 
 // GOVERNMENT
 var policeHQ = L.marker([32.49954889045339, -93.7566043593193], {icon: policeIcon, opacity: 0})
-.bindPopup("<b>Police HQ</b><br>A large building housing the central operations for Shreveport Police.");
+.bindPopup("<b>Police HQ</b><br>A large building housing the central operations of Shreveport Police.");
 var downtownPolice = L.marker([32.515380644280675, -93.74941267504738], { icon: policeIcon, opacity: 0 })
   .bindPopup("<b>Downtown Police Station</b><br>A police station that services the Northern and Central parts of the city.");
 var southPolice = L.marker([32.44651585519162, -93.75793581960598], { icon: policeIcon, opacity: 0 })
   .bindPopup("<b>Dixie Police Station</b><br>A police station that services the Western and Southern parts of the city.");
 var eastPolice = L.marker([32.528270021848975, -93.69815896716939], { icon: policeIcon, opacity: 0 })
   .bindPopup("<b>Franklin Police Station</b><br>A police station that services the Eastern part of the city.");
-var sheriff = L.marker([32.59679885923847, -93.82885700202853], { icon: policeIcon, opacity: 0 })
+var sheriff = L.marker([32.59679885923847, -93.82885700202853], { icon: sheriffIcon, opacity: 0 })
   .bindPopup("<b>Louisiana Sheriff's Department</b><br>A police station that services the state highways and rural areas.");
 var cityHall = L.marker([32.51304513876439, -93.75089804095852], { icon: cityhallIcon, opacity: 0 })
   .bindPopup("<b>City Hall</b><br>Where taxes go up, services go down, and you go crazy.");
 var fireDept = L.marker([32.5004250568676, -93.75797208232918], { icon: firestationIcon, opacity: 0 })
-  .bindPopup("<b>Fire Department</b><br>Founded in 1849. Operate the original Fire Hall as a museum.");
+  .bindPopup("<b>Fire Department</b><br>Founded in 1849. Operates the original Fire Hall as a museum.");
 var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: jailIcon, opacity: 0 })
   .bindPopup("<b>Jail</b><br>Better than the Best Western.");
 var hospital = L.marker([32.495463911870104, -93.75045065043382], { icon: hospitalIcon, opacity: 0 })
-  .bindPopup("<b>Hospital</b><br>Where the sick and weak go.");
+  .bindPopup("<b>Shreveport General Hospital</b><br>Where the sick and weak go.");
 var buildProp = L.marker([32.49590344149009, -93.79191697811254], {icon: policeIcon, opacity: 0})
 .bindPopup("<b>Proposed All in One Building Location</b>");
 var library = L.marker([32.51316102421295, -93.76536621674977], {icon: libraryIcon, opacity: 0})
-.bindPopup("<b>Library</b><br>A place for nerds and dorks.");
-
+.bindPopup("<b>Shreve Memorial Library</b><br>A place for nerds and dorks.");
+var trainDT = L.marker([32.510063683520215, -93.74073140137797], {icon: stationIcon, opacity: 0})
+.bindPopup("<b>Train Station</b><br>Station - Downtown Shreveport");
+var trainMT = L.marker([32.49691036177157, -93.75607902858529], {icon: stationIcon, opacity: 0})
+.bindPopup("<b>Train Station</b><br>Station - Highland Crest");
+var trainG = L.marker([32.540179273172555, -93.70158365321363], {icon: stationIcon, opacity: 0})
+.bindPopup("<b>Train Station</b><br>Station - Franklin Heights");
+var trainD = L.marker([32.45124550693365, -93.75843595253716], {icon: stationIcon, opacity: 0})
+.bindPopup("<b>Train Station</b><br>Station - Dixie");
 
   
 //NARLETHOTEP
-var casino = L.marker([32.51150773810707, -93.79450807554393], {icon: casinoIcon, opacity: 0})
+var casino = L.marker([32.51595472566502, -93.74320041806615], {icon: casinoIcon, opacity: 0})
 .bindPopup("<b>The Obsidian Pharaoh Casino</b><br>A luxury hotel, casino and resort. Offering boxing matches, fine dining, entertainment & more.");
-var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: golfIcon, opacity: 0})
+var golfclub = L.marker([32.478096505564785, -93.80950348768444], {icon: cClubIcon, opacity: 0})
 .bindPopup("<b>Cross Lake Country Club</b><br>A very luxurious and exclusive country club. Featuring three world-class golf courses, a driving range, a premium restaurant, and three bars.");
+var bHotel = L.marker([32.50771858719899, -93.7925970781389], {icon: bHotelIcon, opacity: 0})
+.bindPopup("<b>The Beaumont</b><br>A very luxurious and exclusive boutique hotel. The buildings interior and exterior is styled like a French Chateau.");
  
+ var midPark = L.marker([32.50433440561016, -93.76649556954305], {icon: parkIcon, opacity: 0})
+.bindPopup("<b>Choctaw Park</b><br>A decent park with a baseball diamond, bathrooms, and playground.");
+var mtPark = L.marker([32.51146008402828, -93.79473583801732], {icon: parkIcon, opacity: 0})
+.bindPopup("<b>Dupont Park</b><br>A nice, well maintained park overlooking Cross Lake.");
+ var rrPark = L.marker([32.51493121506898, -93.742109214295], {icon: parkIcon, opacity: 0})
+.bindPopup("<b>Red River Park</b><br>An old, somewhat dirty park along the Red River.");
  
 //HASTUR
-var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: hotelIcon, opacity: 0})
+var mcClubhouse = L.marker([32.382138051135406, -93.58562170500663], {icon: mcIcon, opacity: 0})
 .bindPopup("<b>Crownless Kings MC Clubhouse</b><br>A target of Fire Team's investigation.");
 
 var circusTent = L.marker([32.28474147111808, -93.7651372439974], {icon: circusIcon, opacity: 0})
@@ -476,7 +719,7 @@ var circusTent = L.marker([32.28474147111808, -93.7651372439974], {icon: circusI
 
 //Neutral
 var reserve = L.marker([32.664805329374985, -93.57040253828238], {icon: reserveIcon, opacity: 0})
-.bindPopup("<b>Jena Band of Choctaw Indians Tribal Reserve</b><br>Population: 327  |  Federally Recognized: 1995<br>Government: Tribal Council  |  Chief: Laura Smith");
+.bindPopup("<b>Choctaw Tribal Reserve</b><br>Population: 327  |  Federally Recognized: 1995<br>Government: Tribal Council  |  Chief: Laura Smith");
 var burntWarehouse = L.marker([32.576123341427575, -93.73060783525948], {icon: warehouseIcon, opacity: 0})
 .bindPopup("<b>Ralston Warehouse</b><br>Burned to the ground, most of the wreckage has been cleared.");
 var havelock = L.marker([32.38161256522959, -93.88705040567478], {icon: mansionIcon, opacity: 0})
@@ -485,6 +728,14 @@ var bwhotel = L.marker([32.50273444969439, -93.74550996464066], {icon: hotelIcon
 .bindPopup("<b>Best Western Hotel</b><br>A perfectly fine hotel...");
 var fhotel = L.marker([32.51857661903307, -93.74563243679641], {icon: fHotelIcon, opacity: 0})
 .bindPopup("<b>Hyatt Hotel</b><br>The new-money no-class hotel");
+var chucks = L.marker([32.49908025009023, -93.74634708211826], {icon: chucksIcon, opacity: 0})
+.bindPopup("<b>Chucks Roadhouse</b><br>Has karaoke!");
+var golfCourse = L.marker([32.505426606027, -93.77775277346915], {icon: golfIcon, opacity: 0})
+.bindPopup("<b>Highland Holes Golf Course</b><br>An alright golf course with a small clubhouse and old golf carts.");
+var dump = L.marker([32.62138620397939, -93.52301224273945], {icon: dumpIcon, opacity: 0})
+.bindPopup("<b>Shreveport Regional Landfill</b><br>A landfill that services the City of Shreveport and surrounding areas.");
+var armySurp = L.marker([32.52466105121435, -93.75767591531579], {icon: armyIcon, opacity: 0})
+.bindPopup("<b>Don's Army Surpless</b><br>Selling midrange survival gear and used army kit since 1997.");
 
 //Nature
 var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
@@ -501,14 +752,14 @@ var redRiver = L.marker([32.50062231950311, -93.70788304528705], {icon: riverIco
 .bindPopup("<b>Red River</b><br>A major southern U.S. river that passes through Shreveport and provides extensive recreational fishing, boating, and scenic riverfront access.");
 
 var cypressBayou = L.marker(
-[32.6812257887505, -93.66126538768897],
+[32.61982000979993, -93.59663041827697],
 {icon: swampIcon, opacity: 0}
-).bindPopup("<b>Cypress Bayou</b><br>A network of bayous and waterways in northwest Louisiana, often associated with fishing, paddling, and scenic wetlands near Cross Lake.");
+).bindPopup("<b>Cypress Bayou</b><br>A network of bayous, often associated with fishing, paddling, and scenic wetlands.");
 
 var cypressReservoir = L.marker(
 [32.6812257887505, -93.66126538768897],
 {icon: lakeIcon, opacity: 0}
-).bindPopup("<b>Cypress Bayou Reservoir</b><br>A reservoir formed by damming the Black Bayou and Cypress Bayou, used for flood control and water recreation.");
+).bindPopup("<b>Cypress Bayou Reservoir</b><br>A reservoir formed by damming the Black Bayou and Cypress Bayou, used for flood control and recreation.");
 
 var grandBayou = L.marker(
 [32.363436340462194, -93.60438922679143],
@@ -522,62 +773,104 @@ var grandBayou = L.marker(
 var downtownCatholicChurch = L.marker(
 [32.513789202508825, -93.74699039354155],
 {icon: cChurchIcon, opacity: 0}
-).bindPopup("<b>Catholic Church</b><br>Founded in 1803. Operates Sunday-Friday.");
+).bindPopup("<b>St. Peter's Cathedral</b><br>Local Catholic church. Founded in 1803. Operates Sunday-Friday.");
 
 var downtownWhiskey = L.marker(
-  [32.516113582605165, -93.74338711624323],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Whiskey Bar</b>");
+  [32.51331457307241, -93.74211049923514],
+  { icon: whiskeyIcon, opacity: 0 }
+).bindPopup("<b>Crawford & Sons Reserve Whiskey</b><br>A large, historic whiskey Distillery. High prices & quality.");
 
 var downtownDefacedMemorial = L.marker(
   [32.51393675122211, -93.7412305124366],
   { icon: statueIcon, opacity: 0 }
 ).bindPopup("<b>Civil War Memorial</b><br>A monument honouring Lawrence Beaumont, a local Confederate Hero. He single-handidly repelled a Union attack on a key hill.");
 
-var downtownFineArt = L.marker(
-  [32.51256888901584, -93.74641446831083],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Fine Art Gallery</b>");
+var mtFineArt = L.marker(
+  [32.50388456308037, -93.78823401474357],
+  { icon: fineArtIcon, opacity: 0 }
+).bindPopup("<b>Éclipse Collective</b><br>A high-end art studio and shop, featuring expensive pieces from renowned artists.");
 
 var downtownComedyBar = L.marker(
-  [32.51184868074393, -93.74672537046939],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Comedy Bar</b>");
+  [32.51591396400202, -93.74671155660644],
+  { icon: comedyIcon, opacity: 0 }
+).bindPopup("<b>No Laughs Tonight</b><br>Comedy club & bar, opened in the late 90's. Sometimes features C list celebreties.");
 
 var downtownVelvetMirage = L.marker(
-  [32.5157584629978, -93.74423815310254],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Velvet Mirage Club</b>");
+  [32.51495823391198, -93.74368443368937],
+  { icon: nClubIcon, opacity: 0 }
+).bindPopup("<b>Velvet Mirage Club</b><br>A swanky, expensive club. Frequented by tourists and wealthy locals.");
 
 var downtownThreeSunsPawn = L.marker(
   [32.51771329032037, -93.74839477998073],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Three Suns Pawn</b>");
+  { icon: pawnIcon, opacity: 0 }
+).bindPopup("<b>Three Sons Pawn</b><br>A local pawnshop, buying and selling a wide range of goods.");
+
+var hSchoolDT = L.marker(
+  [32.50859038672144, -93.7466511310298],
+  { icon: schoolIcon, opacity: 0 }
+).bindPopup("<b>Henry Miller Shreve Highschool</b><br>A local highschool serving families in the downtown area. Name honors the founder of Shreveport.");
+
+var hSchoolMT = L.marker(
+  [32.500506056930405, -93.77526923890656],
+  { icon: schoolIcon, opacity: 0 }
+).bindPopup("<b>Cross Bayou Highschool</b><br>A local highschool servicing families in Highland Crescent.");
+
+var hSchoolUT = L.marker(
+  [32.4944628640134, -93.79199560546749],
+  { icon: schoolIcon, opacity: 0 }
+).bindPopup("<b>Magnolia Ridge Academy</b><br>A local highschool servicing families in Western Shreveport.");
+
+var hSchoolG = L.marker(
+  [32.54039853817187, -93.71559642132875],
+  { icon: schoolIcon, opacity: 0 }
+).bindPopup("<b>Red River Highschool</b><br>A local highschool servicing families in Eastern Shreveport.");
+
+var news = L.marker(
+  [32.51054981637256, -93.7446717722423],
+  { icon: newsIcon, opacity: 0 }
+).bindPopup("<b>KTAB-6 Shreveport</b><br>A local news company, leans conservative.");
+
+
 
 
 // =====================
 // MIDTOWN
 // =====================
 
-var midtownGunStore = L.marker(
-  [32.50721323051122, -93.75430422608098],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Gun Store</b>");
-
 var midtownPetStore = L.marker(
   [32.500543956370144, -93.73397127450566],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Pet Store</b>");
+  { icon: petIcon, opacity: 0 }
+).bindPopup("<b>Potentially Yours</b><br>A local pet store, selling cats, dogs, fish, reptiles, birds, supplies and toys.");
 
 var midtownProtestantChurch = L.marker(
   [32.506962920458136, -93.75141733637167],
   { icon: pChurchIcon, opacity: 0 }
-).bindPopup("<b>Protestant Church</b><br>Founded in 1855. Operates all week.");
+).bindPopup("<b>Assemblies of God</b><br>Protestant Church. Founded in 1855. Operates all week.");
 
 var shrevAir = L.marker(
   [32.45444421995224, -93.82635537364374],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Shreveport Regional Airport</b><br>The main commercial airport serving Shreveport–Bossier City and the Ark-La-Tex region, connecting the area with major U.S. hubs.");
+  { icon: airportIcon, opacity: 0 }
+).bindPopup("<b>Shreveport Regional Airport</b><br>The main commercial airport serving Shreveport–Bossier City.");
+
+var gunStore = L.marker(
+  [32.508945781574994, -93.77953394762069],
+  { icon: gunIcon, opacity: 0 }
+).bindPopup("<b>Armory Emporium</b><br>Local weapon and hunting store.");
+
+var mall = L.marker(
+  [32.49950166659777, -93.73632571212472],
+  { icon: mallIcon, opacity: 0 }
+).bindPopup("<b>Shreve City Shopping Center</b><br>A large mall with a range of stores, and half-decent food court.");
+
+var college = L.marker(
+  [32.49694037650233, -93.71680411036212],
+  { icon: collegeIcon, opacity: 0 }
+).bindPopup("<b>Shreveport Community College</b><br>Established: 1959<br>Specializes in Trades, Nursing, and Computer Science.");
+
+var university = L.marker(
+  [32.53775737355869, -93.75120662224508],
+  { icon: collegeIcon, opacity: 0 }
+).bindPopup("<b>Louisiana State University</b><br>Established: 1889<br>Specializes in Aviation, Engineering, and Advanced Maths.");
 
 
 // =====================
@@ -586,13 +879,13 @@ var shrevAir = L.marker(
 
 var uptownFineJewelry = L.marker(
   [32.506607239158484, -93.79038871854934],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Fine Jewelry Store</b>");
+  { icon: diamondIcon, opacity: 0 }
+).bindPopup("<b>Black Diamond Co.</b><br>A high-end jewelry store, authorized Rolex, Tiffany, etc. dealer.");
 
 var uptownFrenchRestaurant = L.marker(
   [32.508299991516225, -93.7915930650738],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>French Restaurant</b>");
+  { icon: fResIcon, opacity: 0 }
+).bindPopup("<b>Le Duck</b><br>Upscale, fine French dining. 2 Michelin stars.");
 
 var uptownCigarLounge = L.marker(
   [32.5039684795301, -93.7883801107973],
@@ -605,24 +898,24 @@ var uptownCigarLounge = L.marker(
 // =====================
 
 var revitalizedFarmToTable = L.marker(
-  [32.521795276818594, -93.73891354435355],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Farm-to-Table Restaurant</b>");
+  [32.52433863318657, -93.73295416657456],
+  { icon: rResIcon, opacity: 0 }
+).bindPopup("<b>Farm-to-Tabluh</b><br>A hip restaurant, serving vegan fusion food.<br>Permanently Closed");
 
 var revitalizedGildedTaphouse = L.marker(
   [32.51999772221097, -93.74144286163792],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Gilded Taphouse</b>");
+  { icon: beerIcon, opacity: 0 }
+).bindPopup("<b>Gilded Taphouse</b><br>A hip, IPA taphouse, serving an assortment of beers with over priced pretzels.");
 
 var revitalizedOutdoorArt = L.marker(
-  [32.522608050571776, -93.74249333678688],
+  [32.527265091993556, -93.74261982723831],
   { icon: outArtIcon, opacity: 0 }
-).bindPopup("<b>Soul of Shreveport Art Park</b><br>A park taken over by young artists, displaying and selling their work.");
+).bindPopup("<b>The Open Wall Outdoor Art Space</b><br>A park taken over by young artists, displaying and selling their work.");
 
 var revitalizedTacos = L.marker(
-  [32.517639349706506, -93.73823069675457],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Taco Spot</b>");
+  [32.51646033562802, -93.73616563091575],
+  { icon: tacoIcon, opacity: 0 }
+).bindPopup("<b>Rosa's Taqueria</b><br>Local, highly rated Mexican restaurant.");
 
 var revitalizedRaveHall = L.marker(
   [32.5164395284143, -93.72848508005411],
@@ -631,8 +924,28 @@ var revitalizedRaveHall = L.marker(
 
 var revitalizedVinylShop = L.marker(
   [32.51626294760965, -93.73471672872273],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Vinyl Record Shop</b>");
+  { icon: vinylIcon, opacity: 0 }
+).bindPopup("<b>Wax & Wayne</b><br>A small vinyl record store, stocking mostly local artists.");
+
+var comEvent = L.marker(
+  [32.52037817535356, -93.7378391823963],
+  { icon: eventIcon, opacity: 0 }
+).bindPopup("<b>Soleil Community Square</b><br>A public space used for small events, vendors, and rallies.");
+
+var revFMarket = L.marker(
+  [32.518429880525424, -93.73975599674108],
+  { icon: fMarketIcon, opacity: 0 }
+).bindPopup("<b>Soleil Flee Market</b><br>Vendors sell antiques, collectibles, knock-offs, and grey market items. There is a foodhall in the centre.");
+
+var shisha = L.marker(
+  [32.51868988651684, -93.74090147576878],
+  { icon: shishaIcon, opacity: 0 }
+).bindPopup("<b>River Clouds</b><br>A nice, riverside hookah lounge, serving Middle Eastern and Indian desserts.");
+
+var radio = L.marker(
+  [32.5160808056683, -93.73103721865184],
+  { icon: radioIcon, opacity: 0 }
+).bindPopup("<b>104.3 The Torch</b><br>A local station, reporting on local events and playing local artists.");
 
 
 // =====================
@@ -641,8 +954,8 @@ var revitalizedVinylShop = L.marker(
 
 var heightsBaptistChurch = L.marker(
   [32.57250928191595, -93.7301441187511],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Baptist Church</b><br>Founded in 1962. Operates Sunday and Wednesday.");
+  { icon: bChurchIcon, opacity: 0 }
+).bindPopup("<b>Calvary Baptist Church</b><br>Founded in 1962. Operates Sunday and Wednesday.");
 
 var heightsTrapHouse = L.marker(
   [32.569240362018526, -93.71901116198914],
@@ -658,19 +971,20 @@ var heightsBasketballPark = L.marker(
 // -------------------------
 // Group markers
 // -------------------------
-var natureLocations = L.layerGroup([reserve, blackBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, hospital, bwhotel, fhotel, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
-var mediumLocations = L.layerGroup([cityHall, casino, golfclub, burntWarehouse, library, southPolice, eastPolice, sheriff]).addTo(map);
-var minorLocations = L.layerGroup([hell, fireDept, jail, downtownCatholicChurch, downtownDefacedMemorial, midtownProtestantChurch, revitalizedOutdoorArt, heightsBasketballPark, downtownPolice, heightsBaptistChurch]).addTo(map);
+var natureLocations = L.layerGroup([reserve, blackBayou, cypressBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, college, university, bwhotel, bHotel, southPolice, sheriff, golfclub, fhotel, mall, dump]).addTo(map);
+var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, cityHall, casino, revitalizedFarmToTable, midPark,  hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, heightsBasketballPark, burntWarehouse, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
+var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, radio, news, shisha, gunStore, midtownPetStore, revitalizedTacos, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, revitalizedOutdoorArt, downtownPolice ]).addTo(map);
 
+//train stations
 
 /*
 LOCKED
 heightsTrapHouse    heightsBaptistChurch
-revitalizedVinylShop  revitalizedRaveHall  RtevitalizedTacos  revitalizedOutdoorArt revitalizedGildedTaphouse  revitalizedFarmToTable
-downtownCatholicChurch, downtownWhiskey, downtownDefacedMemorial, downtownFineArt, downtownComedyBar, downtownVelvetMirage, downtownThreeSunsPawn
-midtownGunStore, midtownPetStore, midtownProtestantChurch
-uptownFineJewelry, uptownFrenchRestaurant, uptownCigarLounge
+revitalizedVinylShop  revitalizedRaveHall    revitalizedOutdoorArt   revitalizedFarmToTable
+
+midtownGunStore, 
+, uptownFrenchRestaurant, uptownCigarLounge
 
 
 32.67160107478138, -93.87860340598624 //MC Meth Lab
@@ -714,12 +1028,12 @@ map.on('zoomend', function() {
 
   // Medium locations visible at zoom 13+
   mediumLocations.eachLayer(function(marker){
-    marker.setOpacity(zoom >= 13 ? 1 : 0);
+    marker.setOpacity(zoom >= 14 ? 1 : 0);
   });
 
   // Minor locations (example, zoom 14+)
   minorLocations.eachLayer(function(marker){
-    marker.setOpacity(zoom >= 14 ? 1 : 0);
+    marker.setOpacity(zoom >= 16 ? 1 : 0);
   });
 });
 
@@ -728,4 +1042,3 @@ map.on('zoomend', function() {
 
 </body>
 </html>
-
