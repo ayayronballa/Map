@@ -669,6 +669,28 @@ var cdealerIcon = L.icon({
   popupAnchor: [0, -28],
 });
 
+var tattooIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/tattoo.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var tourIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/btour.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+
+var fortuneIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/fortune.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
+	
+	
 // -------------------------
 // Create markers
 // -------------------------
@@ -721,7 +743,7 @@ var bHotel = L.marker([32.50771858719899, -93.7925970781389], {icon: bHotelIcon,
 .bindPopup("<b>Choctaw Park</b><br>A decent park with a baseball diamond, bathrooms, and playground.");
 var mtPark = L.marker([32.51146008402828, -93.79473583801732], {icon: parkIcon, opacity: 0})
 .bindPopup("<b>Dupont Park</b><br>A nice, well maintained park overlooking Cross Lake.");
- var rrPark = L.marker([32.51493121506898, -93.742109214295], {icon: parkIcon, opacity: 0})
+ var rrPark = L.marker([32.508766838822005, -93.72349676071791], {icon: parkIcon, opacity: 0})
 .bindPopup("<b>Red River Park</b><br>An old, somewhat dirty park along the Red River.");
  
 //HASTUR
@@ -752,9 +774,11 @@ var dump = L.marker([32.62138620397939, -93.52301224273945], {icon: dumpIcon, op
 .bindPopup("<b>Shreveport Regional Landfill</b><br>A landfill that services the City of Shreveport and surrounding areas.");
 var armySurp = L.marker([32.52466105121435, -93.75767591531579], {icon: armyIcon, opacity: 0})
 .bindPopup("<b>Don's Army Surpless</b><br>Selling midrange survival gear and used army kit since 1997.");
-
 var usedCar = L.marker([32.53963052880406, -93.77211613496584], {icon: cdealerIcon, opacity: 0})
 .bindPopup("<b>Bayou Blowout Used Cars!</b><br>Used car lot, mixed reviews.");
+var bayouTour = L.marker([32.56749014681151, -93.77095676695333], {icon: tourIcon, opacity: 0})
+.bindPopup("<b>Shreveport Swamp Tours</b><br>Taking tourists on airboat rides through 12 Mile Swamp. See crocodiles, birds, and rednecks in their natural environment!");
+
 
 //Nature
 var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
@@ -849,7 +873,10 @@ var news = L.marker(
   { icon: newsIcon, opacity: 0 }
 ).bindPopup("<b>KTAB-6 Shreveport</b><br>A local news company, leans conservative.");
 
-
+var dtTattoo = L.marker(
+  [32.51108529625574, -93.74765196897526],
+  { icon: tattooIcon, opacity: 0 }
+).bindPopup("<b>Last Rights Tattoo</b><br>A local tattoo parlor, artists with a range of art styles work out of here.");
 
 
 // =====================
@@ -986,14 +1013,23 @@ var heightsBasketballPark = L.marker(
   { icon: bBallIcon, opacity: 0 }
 ).bindPopup("<b>Hoop There It Is</b><br>A large park dominated by basketball courts, some having stands around them. Funded by hip hop duo Tag Team in 1996.");
 
+var gTattoo = L.marker(
+  [32.52871583155484, -93.71791065157586],
+  { icon: tattooIcon, opacity: 0 }
+).bindPopup("<b>Blue Tattue</b><br>A small, dingy tattoo parlor. Tattoos here tend to turn out like prison tattoos.");
 
+var fortune = L.marker(
+  [32.53181059044763, -93.70546759904774],
+  { icon: fortuneIcon, opacity: 0 }
+).bindPopup("<b>Auntie Zola's Spirit House</b><br>A small mystic shop featuring fortune telling, tarot cards, and rare ingredients.");
+	
 // -------------------------
 // Group markers
 // -------------------------
 var natureLocations = L.layerGroup([reserve, blackBayou, cypressBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, fhotel, mall, dump]).addTo(map);
-var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, bwhotel, cityHall, casino, revitalizedFarmToTable, midPark,  hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, heightsBasketballPark, burntWarehouse, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
-var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, radio, news, shisha, gunStore, midtownPetStore, revitalizedTacos, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, revitalizedOutdoorArt, downtownPolice ]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, heightsBasketballPark, fhotel, mall, burntWarehouse, dump]).addTo(map);
+var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, radio, bwhotel, cityHall, casino, gTattoo, revitalizedFarmToTable, midPark, fortune,  bayouTour, hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
+var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, news, shisha, gunStore, dtTattoo, midtownPetStore, revitalizedTacos, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, revitalizedOutdoorArt, downtownPolice ]).addTo(map);
 
 //TOO ADD: Trailer Park,  Used Car Dealership
 
@@ -1061,3 +1097,4 @@ map.on('zoomend', function() {
 
 </body>
 </html>
+
