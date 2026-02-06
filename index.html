@@ -689,6 +689,13 @@ var fortuneIcon = L.icon({
   iconAnchor: [14, 28],
   popupAnchor: [0, -28],
 });
+
+var walIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/walmart.png',
+  iconSize: [60, 30],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});
 	
 	
 // -------------------------
@@ -916,7 +923,12 @@ var college = L.marker(
 var university = L.marker(
   [32.53775737355869, -93.75120662224508],
   { icon: collegeIcon, opacity: 0 }
-).bindPopup("<b>Louisiana State University</b><br>Established: 1889<br>Specializes in Aviation, Engineering, and Advanced Maths.");
+).bindPopup("<b>Louisiana State University</b><br>Established: 1889<br>Specializes in Aviation, Engineering, and Advanced Maths.<br>Dr. Garry Reinhart teaches Anthropology here");
+
+var walmart = L.marker(
+  [32.4974557080416, -93.74567519317434],
+  { icon: walIcon, opacity: 0 }
+).bindPopup("<b>Walmart</b><br>Deals as far as the eye can see.");
 
 
 // =====================
@@ -1028,25 +1040,21 @@ var fortune = L.marker(
 // -------------------------
 var natureLocations = L.layerGroup([reserve, blackBayou, cypressBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
 var importantLocations = L.layerGroup([policeHQ, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, heightsBasketballPark, fhotel, mall, bayouTour, burntWarehouse, dump]).addTo(map);
-var mediumLocations = L.layerGroup([trainD, trainDT, trainG, armySurp, trainMT, radio, bwhotel, gunStore, cityHall, casino, gTattoo, revitalizedTacos, revitalizedFarmToTable, midPark, fortune, hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, revitalizedOutdoorArt, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
+var mediumLocations = L.layerGroup([trainD, walmart, trainDT, trainG, armySurp, trainMT, radio, bwhotel, gunStore, cityHall, casino, gTattoo, revitalizedTacos, revitalizedFarmToTable, midPark, fortune, hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, revitalizedOutdoorArt, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
 var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, news, shisha, dtTattoo, midtownPetStore, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, downtownPolice ]).addTo(map);
 
 //TOO ADD: Trailer Park,  Used Car Dealership
 
 /*
 LOCKED
-heightsTrapHouse    heightsBaptistChurch
-revitalizedVinylShop  revitalizedRaveHall    revitalizedOutdoorArt   revitalizedFarmToTable
-
-midtownGunStore, 
-, uptownFrenchRestaurant, uptownCigarLounge
+heightsTrapHouse    
+  revitalizedRaveHall    
+uptownCigarLounge
 
 
 32.67160107478138, -93.87860340598624 //MC Meth Lab
 
 32.3994789227689, -93.75420910673044 //The Porthole
-32.44634248776127, -93.59660751703328 //Trailer Park
-32.53460800020962, -93.76568980693145 //Used car lot
 32.49319775888183, -93.8442117873227 //Yacht Club
 32.488586361451894, -93.84106898915458 //Mayors House
 32.48489184117536, -93.87024322707722 //Madame Noires House
@@ -1097,6 +1105,7 @@ map.on('zoomend', function() {
 
 </body>
 </html>
+
 
 
 
