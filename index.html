@@ -697,6 +697,27 @@ var walIcon = L.icon({
   popupAnchor: [0, -28],
 });
 	
+var conIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/hook.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});	
+
+var cigarIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/cigar.png',
+  iconSize: [50, 50],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});	
+
+var chswIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/ayayronballa/Shrevmapicons/refs/heads/main/icons/crocodile.png',
+  iconSize: [70, 70],
+  iconAnchor: [14, 28],
+  popupAnchor: [0, -28],
+});	
+	
 	
 // -------------------------
 // Create markers
@@ -724,8 +745,8 @@ var jail = L.marker([32.503754114916774, -93.75573064762713], { icon: jailIcon, 
   .bindPopup("<b>Jail</b><br>Better than the Best Western.");
 var hospital = L.marker([32.495463911870104, -93.75045065043382], { icon: hospitalIcon, opacity: 0 })
   .bindPopup("<b>Shreveport General Hospital</b><br>Where the sick and weak go.");
-var buildProp = L.marker([32.49590344149009, -93.79191697811254], {icon: policeIcon, opacity: 0})
-.bindPopup("<b>Proposed All in One Building Location</b>");
+var buildProp = L.marker([32.497864516969585, -93.7919593211317], {icon: conIcon, opacity: 0})
+.bindPopup("<b>Proposed Government Complex Location</b><br>The location of a proposed government complex that would house almost all of Shreveports public services.");
 var library = L.marker([32.51316102421295, -93.76536621674977], {icon: libraryIcon, opacity: 0})
 .bindPopup("<b>Shreve Memorial Library</b><br>A place for nerds and dorks.");
 var trainDT = L.marker([32.510063683520215, -93.74073140137797], {icon: stationIcon, opacity: 0})
@@ -780,7 +801,7 @@ var golfCourse = L.marker([32.505426606027, -93.77775277346915], {icon: golfIcon
 var dump = L.marker([32.62138620397939, -93.52301224273945], {icon: dumpIcon, opacity: 0})
 .bindPopup("<b>Shreveport Regional Landfill</b><br>A landfill that services the City of Shreveport and surrounding areas.");
 var armySurp = L.marker([32.52466105121435, -93.75767591531579], {icon: armyIcon, opacity: 0})
-.bindPopup("<b>Don's Army Surpless</b><br>Selling midrange survival gear and used army kit since 1997.");
+.bindPopup("<b>Don's Army Surplus</b><br>Selling midrange survival gear and used army kit since 1997.");
 var usedCar = L.marker([32.53963052880406, -93.77211613496584], {icon: cdealerIcon, opacity: 0})
 .bindPopup("<b>Bayou Blowout Used Cars!</b><br>Used car lot, mixed reviews.");
 var bayouTour = L.marker([32.56749014681151, -93.77095676695333], {icon: tourIcon, opacity: 0})
@@ -788,7 +809,7 @@ var bayouTour = L.marker([32.56749014681151, -93.77095676695333], {icon: tourIco
 
 
 //Nature
-var blackBayou = L.marker([32.68916993272003, -93.88594880756118], {icon: swampIcon, opacity: 0})
+var blackBayou = L.marker([32.653754632651676, -93.88492203828261], {icon: swampIcon, opacity: 0})
 .bindPopup("<b>Black Bayou</b><br>A 66-mile river and marsh flowing from Texas into Louisiana that feeds into Twelve Mile Bayou and ultimately the Red River.");
 var twelveBayou = L.marker([32.597138124222965, -93.78950571902588], {icon: swampIcon, opacity: 0})
 .bindPopup("<b>Twelve Mile Bayou</b><br>A historic waterway connecting Caddo Lake to the Red River through Shreveport, used for boating and fishing.");
@@ -800,6 +821,10 @@ var wallaceLake = L.marker([32.319095981413994, -93.69787162737968], {icon: lake
 .bindPopup("<b>Wallace Lake</b><br>A freshwater lake in northwest Louisiana known for fishing and bald cypress scenery, with an Army Corps dam controlling outflow.");
 var redRiver = L.marker([32.50868559565116, -93.72313586139899], {icon: riverIcon, opacity: 0})
 .bindPopup("<b>Red River</b><br>A major southern U.S. river that passes through Shreveport and provides extensive recreational fishing, boating, and scenic riverfront access.");
+
+var crocIsland = L.marker([32.6872967495689, -93.88670790307043], {icon: chswIcon, opacity: 0})
+.bindPopup("<b>Chocktaw Island</b><br>An island indicated by Dr. Reinhart and Chief Smith as being an old, important place for the Chocktaw People.");
+
 
 var cypressBayou = L.marker(
 [32.61982000979993, -93.59663041827697],
@@ -946,9 +971,9 @@ var uptownFrenchRestaurant = L.marker(
 ).bindPopup("<b>Le Duck</b><br>Upscale, fine French dining. 2 Michelin stars.");
 
 var uptownCigarLounge = L.marker(
-  [32.5039684795301, -93.7883801107973],
-  { icon: hotelIcon, opacity: 0 }
-).bindPopup("<b>Cigar Lounge</b>");
+  [32.51481403293046, -93.75124885913004],
+  { icon: cigarIcon, opacity: 0 }
+).bindPopup("<b>Black Spiral Cigar Lounge</b><br>Open Thursday, Friday and Saturday, 7PM to 2AM.");
 
 
 // =====================
@@ -1039,17 +1064,17 @@ var fortune = L.marker(
 // Group markers
 // -------------------------
 var natureLocations = L.layerGroup([reserve, blackBayou, cypressBayou, twelveBayou, grandBayou, caddoLake, crossLake, wallaceLake, redRiver, cypressReservoir, shrevAir, mcClubhouse, circusTent, havelock]).addTo(map);
-var importantLocations = L.layerGroup([policeHQ, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, heightsBasketballPark, fhotel, mall, bayouTour, burntWarehouse, dump]).addTo(map);
-var mediumLocations = L.layerGroup([trainD, walmart, trainDT, trainG, armySurp, trainMT, radio, bwhotel, gunStore, cityHall, casino, gTattoo, revitalizedTacos, revitalizedFarmToTable, midPark, fortune, hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, revitalizedOutdoorArt, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
+var importantLocations = L.layerGroup([policeHQ, crocIsland, buildProp, college, university, usedCar, trailerPark, bHotel, southPolice, sheriff, golfclub, heightsBasketballPark, fhotel, mall, bayouTour, burntWarehouse, dump]).addTo(map);
+var mediumLocations = L.layerGroup([trainD, walmart, trainDT, trainG, armySurp, uptownCigarLounge, trainMT, radio, bwhotel, gunStore, cityHall, casino, gTattoo, revitalizedTacos, revitalizedFarmToTable, midPark, fortune, hospital, revitalizedGildedTaphouse, mtFineArt, hSchoolDT, hSchoolMT, hSchoolUT, hSchoolG, downtownCatholicChurch, golfCourse, mtPark, revitalizedOutdoorArt, midtownProtestantChurch, library, eastPolice, downtownWhiskey, heightsBaptistChurch ]).addTo(map);
 var minorLocations = L.layerGroup([hell, fireDept, revitalizedVinylShop, news, shisha, dtTattoo, midtownPetStore, uptownFrenchRestaurant, rrPark, uptownFineJewelry, downtownComedyBar, chucks, jail, comEvent, revFMarket, downtownVelvetMirage, downtownThreeSunsPawn, downtownDefacedMemorial, downtownPolice ]).addTo(map);
 
-//TOO ADD: Trailer Park,  Used Car Dealership
+
 
 /*
 LOCKED
 heightsTrapHouse    
   revitalizedRaveHall    
-uptownCigarLounge
+
 
 
 32.67160107478138, -93.87860340598624 //MC Meth Lab
@@ -1105,14 +1130,3 @@ map.on('zoomend', function() {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
